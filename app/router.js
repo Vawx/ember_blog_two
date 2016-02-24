@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('about');
   this.route('admin');
   this.route('contact');
+  this.route('new-post-form');
 });
 
 export default Router;
