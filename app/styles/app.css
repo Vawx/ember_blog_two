@@ -2,7 +2,7 @@
   color: black !important;
 }
 
-.navbar-brand {
+.navbar-brand a{
   color: black !important;
   font-size: 22px;
 }
