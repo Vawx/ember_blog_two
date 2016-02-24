@@ -1,0 +1,30 @@
+{{yield}}
+
+<div class="container">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="row">
+      <h1>{{post.title}}</h1>
+      <div class="well">
+        {{post.content}}
+      </div>
+      <h3>Comments</h3>
+      <div class="row">
+        <div class="well">
+          {{#each post.comments as |comment|}}
+            <div class="container">
+              {{comment.content}} <a href="#" {{action 'delete' comment}}>Delete</a> <a href="" {{action 'edit' comment}}>Edit</a>
+            </div>
+          {{/each}}
+        </div>
+        {{#if showEditCommentField}}
+          <div class="container">
+            {{textarea value=editCommentField id="editCommentField" cols="60" rows="6"}}
+            <div class="container">
+              <button class="btn btn-warning" {{action 'submitEdit'}}>Save</button>
+            </div>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

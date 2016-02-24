@@ -14,10 +14,10 @@ export default Ember.Route.extend({
       var comment = this.store.createRecord('comment', {
         content: params.content,
       });
-
-      comment.set("post", post);
+      comment.set("post", post);      
       post.get('comments').pushObject(comment);
       comment.save( );
+      post.save( );
     },
   },
 });
