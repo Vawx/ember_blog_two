@@ -1,1 +1,5 @@
 {{outlet}}
+
+{{#each model.posts as |post|}}
+  {{new-post post=post}}
+{{/each}}

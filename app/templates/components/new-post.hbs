@@ -1,1 +1,12 @@
 {{yield}}
+
+<div class="container" style="text-align:center;">
+  <div class="row">
+    <div class="well">
+      {{post}}
+    </div>
+  </div>
+  {{#each comments as |comment|}}
+    {{new-comment comment=comment}}
+  {{/each}}
+</div>
