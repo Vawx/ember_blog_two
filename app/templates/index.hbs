@@ -1,5 +1,5 @@
 {{outlet}}
 
-{{#each model.posts as |post|}}
-  {{new-post post=post}}
+{{#each model as |post|}}
+  {{existing-post post=post submitComment="submitComment"}}
 {{/each}}

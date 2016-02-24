@@ -1,0 +1,33 @@
+{{yield}}
+
+<div class="container">
+  <div class="row">
+    <h2>{{post.title}}</h2>
+    <div class="well">
+      {{post.content}}
+    </div>
+    <div class="well">
+      <label for="">Comments</label>
+      <div class="container">
+        {{#each post.comments as |comment|}}
+          <p>{{comment.content}}</p>
+        {{/each}}
+      </div>
+    </div>
+    <div class="">
+      {{#if showSubmit}}
+        {{textarea value=comment id="comment" cols="60" rows="6"}}
+      {{/if}}
+    </div>
+    {{#if showAdd}}
+      <div class="container" style="padding-bottom: 12px;" style="text-align: right;">
+        <button type="button" class="btn btn-info" name="button"{{action 'addComment'}}>Add Comment</button>
+      </div>
+    {{/if}}
+    {{#if showSubmit}}
+      <div class="container" style="padding-bottom: 12px;" style="text-align: right;">
+        <button type="button" class="btn btn-success" name="button"{{action 'submitComment' post}}>Submit Comment</button>
+      </div>
+    {{/if}}
+  </div>
+</div>
