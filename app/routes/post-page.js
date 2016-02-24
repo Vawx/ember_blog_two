@@ -8,10 +8,21 @@ export default Ember.Route.extend({
     delete( comment ) {
       comment.destroyRecord(  );
     },
-    submitEdit( comment, newContent ) {
-      this.store.findRecord('comment', comment).then( function(comment) {
+    submitEdit( id, newContent ) {
+      this.store.findRecord('comment', id).then( function(comment) {
         comment.set("content", newContent.content);
         comment.save( );
+      });
+    },
+    deletePost( post ) {
+      post.destroyRecord( );
+      this.transitionTo('index');
+    },
+    submitEditPost( id, newContent ) {
+      console.log( id );
+      this.store.findRecord('post', id).then( function(post) {
+        post.set("content", newContent.content);
+        post.save( );
       });
     }
   }

@@ -15,6 +15,7 @@ export default Ember.Component.extend({
       this.sendAction("submitComment", params, post);
       this.set("showAdd",true);
       this.set("showSubmit",false);
+      this.set("comment", "");
     },
   }
 });
